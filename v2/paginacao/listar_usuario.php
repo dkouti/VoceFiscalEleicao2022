@@ -30,7 +30,7 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 			<?php
 			while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 				?>
-					<div class="card mb-3" style="max-width: 540px;">
+					<div class="card mb-3" style="max-width: 540px;justify-content: center;">
   <div class="row no-gutters">
     <div class="col-md-4">
 
@@ -39,12 +39,12 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 		             $file = new SplFileInfo($row_usuario['arquivo']);
 								 $extension  = strtoupper($file->getExtension());
 
-if ($extension == "JPG" || $extension == "JPEG" || $extension == "PNG"){?>
+if ($extension == "JPG" || $extension == "JPEG" || $extension == "PNG" and $row_usuario['thumb'] != null){?>
 
-      <img src="<?php echo $row_usuario['arquivo'];?>" class="card-img" alt="<?php echo $extension;?>" width="150" height="100">
+ <a href="lista.php?id=<?php echo $row_usuario['id'];?>"><img src="<?php echo $row_usuario['thumb'];?>" class="card-img" alt="<?php echo $extension;?>" width="200" height="250"></a>
 <?php } else {
 	?>
- <img src="https://vocefiscal.com.br/v2/images.png" class="card-img" alt="<?php echo $extension;?>" width="150" height="200">
+  <a href="lista.php?id=<?php echo $row_usuario['id'];?>"><img src="https://vocefiscal.com.br/v2/images.png" class="card-img" alt="<?php echo $extension;?>" width="200" height="250"></a>
 	<?php
 }?>
     </div>
@@ -55,11 +55,12 @@ if ($extension == "JPG" || $extension == "JPEG" || $extension == "PNG"){?>
 $textox = $row_usuario['descricao'];
                  
 if (strlen($textox) > 120){
-$textox = substr($textox, 0, 120) . '...';
+$textox = substr($textox, 0, 60) . '...';
 }?>
 
         <p class="card-text"><?php echo $textox;?></p>
-        <p class="card-text"><small class="text-muted">Postado em: <?php echo dataBr($row_usuario["data"]);?> as <?php echo $row_usuario["time"];?></small></p>
+ 
+        <p class="card-text"><small class="text-muted"><?php echo $row_usuario["cidade"];?>/<?php echo $row_usuario["estado"];?><br><?php echo dataBr($row_usuario["data"]);?> as <?php echo $row_usuario["time"];?></small></p>
       </div>
     </div>
   </div>

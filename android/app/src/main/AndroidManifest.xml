@@ -6,13 +6,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-   <application
-        android:label="vocefiscaleleicao2022"
-        android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+   <application android:label="Você Fiscal 2022" android:name="${applicationName}" android:icon="@mipmap/ic_launcher" android:requestLegacyExternalStorage="true">
+       <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -42,4 +40,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+
 </manifest>

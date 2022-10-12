@@ -16,7 +16,7 @@ class _ListaOcorrencias extends State<ListaOcorrencias> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        WebView(initialUrl: 'https://vocefiscal.com.br/v2/paginacao/',
+        WebView(initialUrl: 'https://vocefiscal.com.br/v2/paginacao/index2.php',
          javascriptMode: JavascriptMode.unrestricted, // Add this line
         ),
         if (loadingPercentage < 100)

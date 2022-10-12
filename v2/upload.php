@@ -24,23 +24,19 @@ if (! empty($_FILES)) {
             $data = date('Y-m-d');
             $hora = date('H:i:s');
             
-            $file = new SplFileInfo($thumb);
-            $extension  = $file->getExtension();
+            $file = new SplFileInfo($targetPath);
+            $extension  = strtoupper($file->getExtension());
             
-            if ($extension == "JPG" || $extension == "JPEG" || $extension == "PNG"){
+           if ($extension == "JPG" || $extension == "JPEG" || $extension == "PNG"){
          
         $imagem_Pz = "./images/thumb_".$_FILES['userImage']['name'];
         $image_resize = new \Gumlet\ImageResize($targetPath);
-        $image_resize->resize(150, 100);
+        $image_resize->resize(200, 300);
         $image_resize->save($imagem_Pz);
         $thumb = "https://vocefiscal.com.br/v2/".$imagem_Pz;
-         
-              
-              
-              
-         
+
                $image = new \Gumlet\ImageResize($targetPath);
-             $image->quality_jpg = 20;
+             $image->quality_jpg = 50;
              $image->save($targetPath);
               
 
@@ -50,7 +46,7 @@ if (! empty($_FILES)) {
               VALUES (NULL, '".$_REQUEST["nome"]."', '".$data."', '".$hora."', '".$_REQUEST["estados"]."', '".$_REQUEST["cidades"]."', '".$_REQUEST["descricao"]."', '".$final."', '".$thumb."', '0', '0', '".$_REQUEST["zona"]."', '".$_REQUEST["secao"]."', '".$extension."');");
             ?>
  
-<img src="<?php echo $thumb; ?>" />
+<h3 class="h3">Ocorrência enviada com sucesso!</h3>
 <?php
         }
     }

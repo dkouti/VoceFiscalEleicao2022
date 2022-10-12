@@ -19,7 +19,7 @@
 
     </head>
     <body>
-		<div class="wrapper wrapper--w680">
+		<div class="wrapper wrapper--w680" style="justify-content: center;">
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title" style="text-align: center;"> </h2>

@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Colorlib Templates">
     <meta name="author" content="Colorlib">
     <meta name="keywords" content="Colorlib Templates">
-
+    <!-- CSS only -->
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>VoceFiscal.com.br</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -20,9 +21,7 @@
 
     <!-- Vendor CSS-->
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="ajax.js">
-
+ 
     <!-- Main CSS-->
     <script src="jquery-2.1.1.min.js"></script>
 
@@ -72,10 +71,18 @@
         }
 
         h3 {
-            text-align: right;
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            color: red;
+            font-size: 20px;
         }
-    </style>
-    <style>
+
+        .p1 {
+            font-family: "Times New Roman", Times, serif;
+            color: red;
+            font-size: 12px;
+        }
+
         #uploadForm label {
             margin: 2px;
             font-size: 1em;
@@ -97,6 +104,7 @@
         }
     </style>
 
+
 </head>
 
 <body>
@@ -105,27 +113,16 @@
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title" style="text-align: center;">Poste suas informaçoes</h2>
-                <form action="upload.php" method="post" id="uploadForm" enctype="multipart/form-data">
+                <form action="upload.php" method="post" id="uploadForm">
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Seu nome</label>
+                                <label class="label">Seu nome: (<font class="p1">Obrigatório.</font>)</label>
                                 <input class="input--style-4" type="text" name="nome" required>
                             </div>
                         </div>
                     </div>
-                    <div class="row row-space">
-                        <div class="col-2">
-                            <div class="input-group">
-                                <label class="label">Data da ocorrencia</label>
-                                <div class="input-group-icon">
-                                    <input class="input--style-4 js-datepicker" type="text" name="ocorrencia" required>
-                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
 
 
 
@@ -136,7 +133,7 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Estado</label>
+                                <label class="label">Estado: (<font class="p1">Obrigatório.</font>)</label>
                                 <select id="estados" name="estados" class="input--style-4">
                                     <option value=""></option>
                                 </select>
@@ -144,7 +141,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Cidade</label>
+                                <label class="label">Cidade: (<font class="p1">Obrigatório.</font>)</label>
                                 <select id="cidades" name="cidades" class="input--style-4">
                                 </select>
                             </div>
@@ -156,35 +153,51 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Seçao</label>
+                                <label class="label">Seção:</label>
                                 <input class="input--style-4" type="text" name="secao">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Zona</label>
+                                <label class="label">Zona:</label>
                                 <input class="input--style-4" type="text" name="zona">
                             </div>
                         </div>
                     </div>
 
 
- 
+                    <div class="input-group">
+                        <div class="row">
+                            <label class="label">Descrição da ocorrencia: (<font class="p1">Obrigatório.</font>)</label> <textarea name="descricao" class="input--style-4" rows="4" cols="40" required></textarea>
+                        </div>
+                    </div>
 
 
                     <div class="input-group">
                         <div class="row">
-                            <label class="label">Envie video ou foto:</label> <input name="userImage" id="userImage" type="file" class="full-width" required>
+                            <label class="label">Envie video ou foto: (<font class="p1">Obrigatório.</font>)</label> <input name="userImage" id="userImage" type="file" class="full-width" required>
+                            <font class="p1">Limite de 200MB.</font>
+                            <font class="p1">NÃO POSTE FOTO OU VIDEO DO SEU VOTO/URNA.</font>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="row">
+
+
+                            <label class="label">Declaro que estou de acordo com os <strong>Termos de uso.</label></strong>
+
+
+
                         </div>
                     </div>
 
 
 
 
-
                     <div class="p-t-15">
-                    <input type="submit" value="Enviar"
-                    class="input--style-4" />
+                        <input type="submit" value="Enviar" class="btn btn-info" />
+
                     </div>
 
                     <div class="row">
@@ -204,8 +217,6 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
     <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
