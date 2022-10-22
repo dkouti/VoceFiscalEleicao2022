@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: red;
+  font-size: 20px;
+}
+
+.vermelho {
+  color: #f33;
+}
+#p2 {
+  font-family: "Times New Roman", Times, serif;
+  color: green;
+  font-size: 12000px;
+}
+#uploadForm label {
+  margin: 2px;
+  font-size: 1em;
+}
+
+#progress-bar {
+  background-color: #12CC1A;
+  color: #FFFFFF;
+  width: 0%;
+  -webkit-transition: width .3s;
+  -moz-transition: width .3s;
+  transition: width .3s;
+  border-radius: 5px;
+}
+
+#targetLayer {
+  width: 100%;
+  text-align: center;
+}

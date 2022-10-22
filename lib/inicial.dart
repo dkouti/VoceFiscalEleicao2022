@@ -17,7 +17,7 @@ class _InicioState extends State<Inicio> {
     return Stack(
       children: [
         WebView(
-          initialUrl: 'https://vocefiscal.com.br/v2/index.php',
+          initialUrl: 'https://vocefiscal.com.br/vcfiscal/',
 
 
           javascriptMode: JavascriptMode.unrestricted,        // Add this line

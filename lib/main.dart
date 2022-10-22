@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/services.dart';
+import 'package:vocefiscaleleicao2022/quemsomos.dart';
 import 'inicial.dart';
 import 'package:vocefiscaleleicao2022/ocorrencias/lista.dart';
 import 'dart:io';
@@ -14,7 +15,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int _page = 0;
-  final tabs = [Inicio(), ListaOcorrencias(), Inicio()];
+  final tabs = [Inicio(), ListaOcorrencias(), QuemSomos()];
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
